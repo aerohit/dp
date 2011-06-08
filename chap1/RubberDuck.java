@@ -1,12 +1,13 @@
-public class MallardDuck extends Duck {
+public class RubberDuck extends Duck {
     public void display() {
-	System.out.println("Looks like a MallardDuck");
+	System.out.println("Looks like a RubberDuck");
     }
     public static void main(String [] args) {
-	MallardDuck duck = new MallardDuck();
+	RubberDuck duck = new RubberDuck();
 	duck.quack();
 	duck.swim();
 	duck.display();
 	duck.fly();
     }
 }
+

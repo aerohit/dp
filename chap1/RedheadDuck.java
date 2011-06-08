@@ -7,5 +7,6 @@ public class RedheadDuck extends Duck {
 	duck.quack();
 	duck.swim();
 	duck.display();
+	duck.fly();
     }
 }
