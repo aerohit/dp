@@ -7,3 +7,4 @@ Chapter 1 - The strategy pattern
 * Program to an interface, not an implementation.
 * Favor composition over inheritance (HAS-A can be better than IS-A).
 
+Chapter 2- The observer pattern
