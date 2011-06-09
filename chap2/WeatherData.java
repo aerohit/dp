@@ -1,23 +1,38 @@
-public class WeatherData {
-	private CurrentConditionsDisplay currentConditionsDisplay = new CurrentConditionsDisplay();
-	private StatisticsDisplay statisticsDisplay = new StatisticsDisplay();
-	private ForecastDisplay forecastDisplay = new ForecastDisplay();
+import java.util.ArrayList;
+import java.util.List;
+
+public class WeatherData implements Subject {
+	private double temperature;
+	private double pressure;
+	private double humidity;
+	private List<Observer> observers;
 	
-	public float getTemperature() {
-		return 0;
+	public WeatherData() {
+		observers = new ArrayList<Observer>();
 	}
-	public float getHumidity() {
-		return 0;
+	
+	public void setMeasurements(double temperature, double pressure, double humidity) {
+		this.temperature = temperature;
+		this.pressure = pressure;
+		this.humidity = humidity;
+		measurementsChanged();
 	}
-	public float getPressure() {
-		return 0;
-	}
+	
 	public void measurementsChanged() {
-		float temperature = getTemperature();
-		float humidity = getHumidity();
-		float pressure = getPressure();
-		currentConditionsDisplay.update(temperature, pressure, humidity);
-		statisticsDisplay.update(temperature, pressure, humidity);
-		forecastDisplay.update(temperature, pressure, humidity);
+		notifyObservers();
+	}
+	
+	public void registerObserver(Observer o) {
+		observers.add(o);
+	}
+	
+	public void removeObserver(Observer o) {
+		observers.remove(o);
+	}
+	
+	public void notifyObservers() {
+		for(Observer o : observers) {
+			o.update(temperature, pressure, humidity);
+		}
 	}
 }
