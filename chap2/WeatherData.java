@@ -1,16 +1,25 @@
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Observable;
 
-public class WeatherData implements Subject {
+public class WeatherData extends Observable {
 	private double temperature;
 	private double pressure;
 	private double humidity;
 	private List<Observer> observers;
 	
-	public WeatherData() {
-		observers = new ArrayList<Observer>();
+	public double getTemperature() {
+		return temperature;
 	}
-	
+
+	public double getPressure() {
+		return pressure;
+	}
+
+	public double getHumidity() {
+		return humidity;
+	}
+
 	public void setMeasurements(double temperature, double pressure, double humidity) {
 		this.temperature = temperature;
 		this.pressure = pressure;
@@ -19,20 +28,8 @@ public class WeatherData implements Subject {
 	}
 	
 	public void measurementsChanged() {
+		setChanged();
 		notifyObservers();
 	}
-	
-	public void registerObserver(Observer o) {
-		observers.add(o);
-	}
-	
-	public void removeObserver(Observer o) {
-		observers.remove(o);
-	}
-	
-	public void notifyObservers() {
-		for(Observer o : observers) {
-			o.update(temperature, pressure, humidity);
-		}
-	}
+
 }
