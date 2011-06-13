@@ -1,6 +1,6 @@
 ## Design Principles:
 
-Sample code from the HeadFirst series.
+Practice code from the book Head First Design Principles.
 
 ### Chapter 1 - The strategy pattern
 
@@ -13,3 +13,7 @@ Sample code from the HeadFirst series.
 * Strive for loosely coupled designs between objects that interact.
 
 ### Chapter 3- The decorator pattern
+
+* The open-closed principle: Classes should be open for extension, but closed for modification.
+
+**Tip** - Inheritance isn't always used for code reuse, in this example CondimentDecorator extends Beverage just to do type matching. 
