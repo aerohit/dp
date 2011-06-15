@@ -27,3 +27,7 @@ Some guidelines to follow the DIP:
 1. No variable should hold a reference to a concrete class.
 2. No class should derive from a concrete class.
 3. No method should override an implemented method of any of its base classes.
+
+### Chapter 5- The Singleton Pattern
+
+* Ensure a class only has one instance and provide a global point of access to it. Make sure it is thread safe.
