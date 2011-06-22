@@ -31,3 +31,6 @@ Some guidelines to follow the DIP:
 ### Chapter 5- The Singleton Pattern
 
 * Ensure a class only has one instance and provide a global point of access to it. Make sure it is thread safe.
+
+### Chapter 6- The Command Pattern
+
